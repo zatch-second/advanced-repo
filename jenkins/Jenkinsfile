@@ -11,6 +11,7 @@ pipeline{
                 sh 'docker compose -f deploy/docker-compose.yml up -d --build'
                 sleep 5
             }
+        }
         stage('Test container'){
             steps{
                 sh 'curl http://api:8080 || curl http://localhost:8080'
