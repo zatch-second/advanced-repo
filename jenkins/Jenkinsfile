@@ -9,11 +9,12 @@ pipeline{
         stage('Deploy Environment'){
             steps{
                 sh 'docker compose -f deploy/docker-compose.yml up -d --build'
-                sleep 5
+                sleep 3
             }
         }
         stage('Test container'){
             steps{
+                sleep 10
                 sh 'curl http://api:8080 || curl http://localhost:8080'
             }
         }
