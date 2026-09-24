@@ -15,7 +15,7 @@ pipeline{
         stage('Test container'){
             steps{
                 sleep 10
-                sh 'curl http://api:8080 || curl http://localhost:8080'
+                sh 'curl http://172.7.0.1:8080'
             }
         }
     }
